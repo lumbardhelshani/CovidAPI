@@ -27,7 +27,7 @@ class CountryCasesController extends Controller
     public function create(Request $r)
     {
 
-        $CountryCase = CountryCases::where("date" , '=' , $r['date'])->where("countryName","=",$r['name'])->first();
+        $CountryCase = CountryCases::where("date" , '=' , $r['date'])->where("countryName", "=" ,$r['countryName'])->first();
         if($CountryCase){
             $CountryCase->cases = $r['cases'];
         }else{
